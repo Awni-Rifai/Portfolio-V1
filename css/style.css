@@ -21,8 +21,10 @@ body{
 }
 
 .bg-dark-light{
-    background-color: rgba(0,0,0,0.3);
+    /*background-color: rgba(0,0,0,0.1);*/
+    transition: 1s all ease-in;
 }
+
 /************************************************/
 /*_________________Utility-classes__________________________*/
 .font-header{
@@ -37,104 +39,144 @@ body{
 
 }
 .brand{
-    color: white;
-    font-size: 2rem;
+    color: black;
+    font-size: 3rem;
     text-decoration: none;
 }
 .brand:hover{
-    color: white;
+    color: black;
     animation: skills-card;
     animation-duration: 1s;
     animation-timing-function: linear;
 }
-/***________________________________________________________________****/
-/**Home-Section*/
-.home{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+/**____________________________INTRO Section__________________________________*/
+.intro{
     
-}
-
-
-/*__________________________________________________________________**/
-/*Profile card**/
-.container-home{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: column;
-    width: 30%;
-    height: 90%;
-    position: relative;
-}
-.card-profile{
-    
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    display: flex;
-    align-items: center;
-    padding: 2rem;
-    border-radius: 1rem;
-    background-color: white;
-    box-shadow: 0px 10px 20px rgba(0,0,0,0.2);
-    position: relative;
-    z-index: 4;
-    margin-top: 4rem;
-    animation-name: cardanimation;
-    animation-duration: 1s;
-    animation-timing-function: linear;
-    
-        
-    
-}
-
-.profile-pic{
-    width: 8rem;
-    height: 8rem;
-    border-radius: 3rem;
-    margin-right: 2rem;
-    padding: 0.4rem;
-    border: 0.2px solid rgba(255, 255, 255, 0.8)
-    
+    width: 100vw;
+   
 
 }
-
-
-.description h6{
-    color: red;
-}
-.badgescard{
-    padding: 1rem 1rem;
-    border-radius: 0.5rem;
-    background-color: #ECECEC;
-     
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-    position: absolute;
-    z-index: 3;
-    width: 80%;
-    left: 10%; 
-    top:45%;
+.intro-container{
+    padding: 15rem 4rem;
+    padding-bottom: 6rem;
+    
+    margin-bottom: 4rem;
     text-align: center;
-    animation-name: minicardanimation;
-    animation-duration: 4s;
-    animation-timing-function: linear;
+    font-weight: bold;
+
+}
+.intro-container h1{
+    font-size: 4rem;
+  
+    margin-bottom: 2rem;
+    
+
+}
+.intro-container h1 span{
+    display: block;
+}
+.intro-container p{
+    display: block;
+    width: 50%;
+    font-size: 1.2rem;
+    font-weight: 200;
+    
+    margin: auto;
+}
+
+
+.intro-button{
+    display: block;
+    margin-bottom: 2rem;
+    position: relative;
+    width: 20%;
+    margin: auto;
+    display: none;
+    margin-top: 4rem;
    
 }
-.badgescard>span>a>img{
-    width: 4rem;
+@media(max-width:1050px){
+    .intro-button{
+        width: 40%;
+    }
 }
+@media (max-width:700px){
+    .intro-container{
+        padding: 10rem 1rem;
+    }
+    .intro-container h1{
+        font-size: 3rem;
+    }
+    .intro-container p{
+        width: 80%;
+    }
+    .intro-button{
+        width: 80%;
+    }
+    .button-nav{
+        margin-bottom: 2rem;
 
-.github img{
-    width: 8rem;
+             
+    }
+    .nav-link-dark-color{
+        color: black;
+        
+    }
+    
+   
 }
-/*********Button-home************************/
-.button-home{
-    margin-bottom: 2rem;
+/*--------------------------------------------------------------------------------------*/
+/*---------------------------------------Nav-fixed---------------------------------------*/
+.nav-fixed-left{
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: inherit;
+    width: 3%;
+    height: 30%;
+    z-index: 3;
+    
+}
+.nav-fixed-left>a{
+    font-size: 2.5rem;
+    height: 25%;
+    text-decoration: none;
+    color: black;
+    
+}
+@media(max-width:1000px){
+    .nav-fixed-left{
+        width: 7%;
+    }
 
     
-
 }
+
+
+
+
+@media(max-width:1025px) and (max-height:1367px){
+    .nav-fixed-left{
+        width: 4%;
+        height: 16%;
+    }
+    .intro p{
+        font-size: 1.5rem;
+        width: 80%;
+    }
+}
+@media(max-width:415px){
+    .nav-fixed-left{
+        width: 10%;
+    }
+}
+
+
+
+
+
+
+
 /*******************************Animation************************************************************************/
 @keyframes cardanimation{
     0%{
@@ -252,69 +294,8 @@ body{
     transition-delay:0.75s ;
   }
 /****************************/
-/****--------------Background---------------------------**/
-.background-image-opacity{
-    position: absolute;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    background-image: url("../images/pexels-photo-325185.jpeg");
-    background-size: cover;
-    z-index: -1;
-    opacity: 0.4;
-}
+
 /***-----------------------------------------------------------*/
-@media (max-width:1514px){
-    .container-home{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        width: 90%;
-        height: 90%;
-        position: relative;
-    }
-
-    .badgescard{
-        padding: 1rem 1rem;
-        border-radius: 0.5rem;
-        background-color: #ECECEC;
-         
-        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-        position:initial;
-        
-        width: 80%;
-        
-        text-align: center;
-        animation-name: minicardanimation;
-        animation-duration: 4s;
-        animation-timing-function: linear;
-       
-    }
-    #colorNav{
-        position: relative;
-        padding: 13px 24px;
-        color: red;
-        text-transform: capitalize;
-        text-decoration: none;
-        font-size: 18px;
-        overflow: hidden;
-        transition: 0.2s;
-        margin-top: 2rem;
-        top: 0%;
-        margin-bottom: -16%;
-      
-      }
-            
-        
-
-}
-
-@media (min-width:400px) and (max-width:1000px){
-    .badgescard{
-    top: 80%;
-    }
-}
 /********------------------------------------------------------------------------------------------------------------------*/
 /*-----------------------------------------------------------Services-Section-----------------------------------------------*/
 /**Services____________________________________________**/
@@ -370,16 +351,22 @@ body{
 }
 /*____________________________________________Services-Section-RESPONSIVE________________________*/
 @media(max-width:750px){
+    .services{
+        padding: 0.2rem 0;
+        width: 100vw;
+    }
 .container-services{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
+    margin: 0;
     
 }
 .card-container-services{
-    width: 95%;
+    width: 100%;
+    
     margin-bottom: 2rem;
 }
 .img-services{
@@ -427,7 +414,7 @@ body{
 /********------------------------------------------------------------------------------------------------------------------*/
 /*-----------------------------------------------------------Skills-Section-----------------------------------------------*/
 .skills-img-reduce-size{
-    height: 6rem;
+    height: 3rem;
 }
 div.card{
     height:40vh;
@@ -435,6 +422,7 @@ div.card{
 }
 .skills .card{
     transition: 0.3s all ease;
+    width: 100%;
 }
 .skills .card:hover{
     
@@ -451,6 +439,11 @@ div.card{
     div.card{
         width: 70%;
         margin: auto;
+    }
+    @media(max-width:450px){
+        div.card{
+        width: 100%;
+        }
     }
 
 }
@@ -491,7 +484,7 @@ div.card{
 .img-size-reduced{
     /*Reduce The size of the image to the container*/
     width: 100%;
-    height: 100%;
+    height: 80%
 }
 .overlay-img{
     position: relative;
@@ -500,12 +493,13 @@ div.card{
 
 .project-card{
     width: 90%;
-    height: fit-content;
+    height: 20rem;
    
   
     margin: auto;
     
 }
+
 
 .overlay{
     padding:1rem 2%;
@@ -695,85 +689,90 @@ div.card{
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("../images/contactme2.jfif");
+    /*background-image: url("../images/contactme2.jfif");*/
+    background-color: grey;
     z-index: -1;
     opacity: 0.3;
 }
-.contact-me-container{
-    width: 60%;
-    margin: auto;
-    background-color: rgba(0, 0, 0, 0.2);
-    text-align: center;
-    padding: 1rem 4rem;
+.awni-info{
+    padding: 3rem;
+    margin: 1rem 0;
 }
-.contact-me-content{
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
-    
-}
-.contact-me-content>img{
-    width: 2rem;
-    display: inline-block;
-    margin-right: 1rem;
-    
-    
-}
-.contact-me-phone img{
-    margin-right: 2rem;
-    margin-left: 1rem;
-    
-}
-.contact-me-content>div{
-    display: inline-block;
-
-}
-.contact-me-phone span{
+.awni-info_list{
+    position: relative;
+    list-style-type: none;
     display: block;
-    
+    text-align: left;
 }
-.contact-me-email{
-    margin-top: 0.5rem;
-    
-}
-.contact-me-email img{
-    width: 2rem;
-    margin-left: 1rem;
-    margin-right: 2rem;
-}
-.contact-me-linkedIn a{
-    text-decoration: none;
-    color: black;
-}
-.contact-me-linkedIn img{
-    width: 3rem;
-    margin-left: 0.8rem;
-    margin-bottom: 0rem;
-}
-/*----------------------------------------Contact-me-Responsive ---------------------------*/
-@media(max-width:1050px){
-    /* Contact me*/
-    .contact-me{
-        padding: 3rem 0;
-        height: fit-content;
-        font-size: 1rem;
-        
-    }
-    .contact-me-container{
-        width: 95%;
-        font-size: 1rem;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        justify-content: center;
-        height: 50vh;
-      
-      
-    }
-    /**_______________________________________________**/
 
+.awni-info_list li:before{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    content: "✓";
+    font-weight: 800;
+    margin-right: 0.2rem;
     
-    /***********************************************************************/
+}
+
+.display-3--brief{
+    font-size: 2.5rem;
+}
+/*_-------------------------------------------------------------------------*/
+
+/*-----------------------------contact-me-new--------------------------------*/
+.heading-line{
+    margin: auto;
+    width: 18%;
+    height: 10%;
+    border-top: solid 3px black;
+    padding: 0;
+    
+}
+.contact-me-gradient{
+    background-color: #d9e4f5;
+    background-image: linear-gradient(315deg, #d9e4f5 0%, #f5e3e6 74%);
+    backdrop-filter: saturate(180%) blur(20px);
+
+}
+.form{
+    padding: 3rem;
+}
+.form button{
+    border: none;
+    font-size: 1.5rem;
+    width: 50%;
+    margin:auto;
+    transition: 0.5s all ease;
+}
+.form button:hover{
+    border: hotpink 1px solid;
+    transform: scale(1.05);
+
+}
+.form button:active{
+    transform: scale(0.95);
+}
+@media(max-width:450px){
+    .form{
+        padding: 2rem 0;
+    }
+    .form button{
+        width: 80%;
+    }
+}
+@media(max-width:770px){
+    .awni-info_list{
+        font-size: 1.4rem;
+    }
+    .awni-info{
+        font-size: 1.2rem;
+        padding: 0;
+    }
+    .contact-me p{
+        padding: 0;
+        font-size: 1rem;
+    }
+}
+   /***********************************************************************/
     
     footer section{
         padding-bottom: 3rem;
@@ -789,7 +788,7 @@ div.card{
         display: inline;
         transform: translateX(-80%);
     }
-}
+
 /****************Footer**********************************************/
 footer{
     width: 100vw;
