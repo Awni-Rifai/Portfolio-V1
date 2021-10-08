@@ -1,4 +1,11 @@
 'use strict'
+
+const section2=document.querySelector('.services');
+const section1=document.querySelector('.intro h1');
+const skills=document.querySelector('.skills');
+const projects=document.querySelector('.projects');
+const testemonials=document.querySelector('.testemonials');
+const contactMe=document.querySelector('.contact-me');
 const TypeWriter=function(textElement,words,wait=1000){
     this.textElement=textElement;
     this.words=words;
@@ -26,7 +33,7 @@ TypeWriter.prototype.type=function(){
     //Insert txt into element
     this.textElement.textContent=this.txt;
     // Initial Type Speed
-    let typeSpeed=100;
+    let typeSpeed=200;
     if(this.isDeleting){
         //cut the speed into half
         typeSpeed/=2;
@@ -34,6 +41,7 @@ TypeWriter.prototype.type=function(){
     // If word is complete
     if(!this.isDeleting && this.txt===fullTxt ){
         // Make pause at end
+        document.querySelector('.cursor').classList.toggle('cursor-typing');
         typeSpeed=this.wait;
         // Set delete to true
         this.isDeleting=true;
@@ -57,13 +65,16 @@ TypeWriter.prototype.type=function(){
     
 }
 //run when the DOM load
-document.addEventListener('DOMContentLoaded',init);
+document.addEventListener('DOMContentLoaded',function(){
+    setTimeout(init,2000);
+});
 // Init App
+//Remove the cursor after a while
+setTimeout(()=>document.querySelector('.cursor').style.display="none",12000)
 
 
 
-const section2=document.querySelector('.services');
-const section1=document.querySelector('.intro h1');
+
 
 function init(){
     const textElement=document.querySelector('.text-type');
@@ -72,6 +83,7 @@ function init(){
 }
 
 
+/*------------------------BackGround change when scrolling---------------*/
 const obsCallback=function(entries,observer){
     entries.forEach(entry => {
         const nav= document.querySelector('.bg-dark-light');
@@ -124,3 +136,22 @@ document.querySelector('.navbar button').addEventListener('click',function(e){
     }
     
 })
+/*------------------------------Display each section-----------------------------------*/
+const obsCallbackFun=function(entries,observer){
+    entries.forEach(entry=>{
+       
+        if(entry.isIntersecting){
+            entry.target.style.opacity="1";
+        }
+    })
+}
+const optionsForObserver={
+    root:null,
+    threshold:[0.3],
+}
+const DisplayObserver= new IntersectionObserver(obsCallbackFun,optionsForObserver);
+DisplayObserver.observe(section2);
+DisplayObserver.observe(skills);
+DisplayObserver.observe(projects);
+DisplayObserver.observe(testemonials);
+DisplayObserver.observe(contactMe);

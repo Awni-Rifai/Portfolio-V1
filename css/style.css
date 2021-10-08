@@ -69,12 +69,11 @@ body{
     font-size: 4rem;
   
     margin-bottom: 2rem;
-    
+    width: 80%;
+    margin: auto;
 
 }
-.intro-container h1 span{
-    display: block;
-}
+
 .intro-container p{
     display: block;
     width: 50%;
@@ -94,6 +93,39 @@ body{
     display: none;
     margin-top: 4rem;
    
+}
+.text-type{
+    display: inline-block;
+}
+.cursor{
+    position: absolute;
+   
+    width: 5px;
+    background-color: black;
+    animation: blink 1.1s infinite;
+    height: 4rem;
+    margin-left: 0.2rem;
+
+}
+.cursor-typing{
+    animation: none;
+}
+@keyframes blink{
+    0%{
+        background-color: black;
+    }
+    49%{
+        background-color: black;
+    }
+    50%{
+        background-color: transparent;
+    }
+    99%{
+        background-color: transparent;
+    }
+    100%{
+        background-color:black ;
+    }
 }
 @media(max-width:1050px){
     .intro-button{
@@ -304,6 +336,8 @@ body{
     background-color: white;
  padding: 2rem 2rem;
  overflow-x: hidden;
+ transition: all 2s ease-out;
+ opacity: 0;
  
  }    
  .container-services{
@@ -413,6 +447,10 @@ body{
 /*----------------------------------------------------------------------------------------------------------*/
 /********------------------------------------------------------------------------------------------------------------------*/
 /*-----------------------------------------------------------Skills-Section-----------------------------------------------*/
+.skills{
+    transition: 2s ease-out;
+    opacity: 0;
+}
 .skills-img-reduce-size{
     height: 3rem;
 }
@@ -474,6 +512,8 @@ div.card{
     overflow-x: hidden;
     height: fit-content;
     padding-bottom:4rem;
+    transition: 2s ease-out;
+    opacity: 0;
    
     
 }
@@ -605,6 +645,8 @@ div.card{
     overflow-x: hidden;
    padding: 2rem;
    background-color: rgb(231, 228, 228);
+   transition: 2s ease-out;
+    opacity: 0;
 }
 .card-testemonial{
    
@@ -680,6 +722,8 @@ div.card{
     
     position: relative;
     font-size: 2rem;
+    transition: 2s ease-out;
+    opacity: 0;
     
 }
 .contact-me:before{
